@@ -1,0 +1,40 @@
+.btn {
+    background: rgb(180,96,219);
+    background: linear-gradient(0deg, rgba(180,96,219,1) 0%, rgba(180,96,219,1) 35%, rgba(235,114,218,1) 100%);
+    color:white;
+    padding:15px;
+    font-weight:400;
+    -webkit-box-shadow: 2px 5px 16px 0px #d0d0d0, inset 5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: 2px 5px 16px 0px #d0d0d0, inset 5px 5px 15px 5px rgba(0,0,0,0);
+    display:inline-block;
+
+    &:hover {
+        background: rgb(180,96,219);
+        font-weight:bold;
+        background: linear-gradient(0deg, rgba(180,96,219,1) 0%, rgba(180,96,219,1) 35%, rgba(223,92,204,1) 100%);
+        -webkit-box-shadow: 2px 8px 16px 0px #d0d0d0, inset 5px 5px 15px -11px rgba(0,0,0,0); 
+        box-shadow: 2px 8px 16px 0px #d0d0d0, inset 5px 5px 15px -11px rgba(0,0,0,0);
+    }
+    
+    &:focus {
+        background: rgb(180,96,219);
+        background: linear-gradient(10deg, rgba(180,96,219,1) 0%, rgba(180,96,219,1) 75%, rgba(235,114,218,1) 100%);
+    }
+
+    &--large {
+        padding:15px 50px;
+        margin:15px auto 30px auto;
+    }
+}
+
+.heart {
+    width:23px; height:21px;
+    background:url(../images/heart.png) no-repeat;
+    margin-top:10px;
+    transition: background-image .30s ease-in-out;
+    cursor:pointer;
+
+    &:hover {
+        background-image:url(../images/heart-active.png);
+    }
+}

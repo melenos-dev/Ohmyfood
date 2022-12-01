@@ -1,0 +1,253 @@
+body.menu {
+    header {
+        margin-bottom:0;
+
+        .container {
+            background:none;
+
+            .back {
+                font-size:130%;
+            }
+
+            #logo {
+                margin-left:-18px; // size of back arrow link
+            }
+        }
+    }
+
+    .img {
+        overflow:hidden;
+        position:relative;
+        z-index:-1;
+        height:300px;
+    
+        img {
+            width:100%;
+            min-width:1400px;
+            position:absolute;
+            top:-130%; left:0;
+
+            @include tablet-only{
+                min-width:100%;
+                top:-50%;
+            }
+
+            @include mobile-only{
+                top:-20%;
+            }
+        }
+    }
+
+    .card {
+        background-color:$bg-light;
+        border-radius:30px 30px 0px 0px;
+        -moz-border-radius:30px 30px 0px 0px;
+        margin-top:-50px;
+        padding:30px 15px;
+        z-index:4; // Loader z-index is 5
+
+        .top {
+            @extend .space-between;
+            justify-content: center;
+            @include mobile-only{
+                justify-content:space-between;
+            }
+        }
+
+        .wrap {
+            @keyframes fadeIn {
+                0%{
+                    opacity:0;
+                    margin-top:20px;
+                }
+
+                90%{
+                    opacity:1;
+
+                }
+
+                100%{
+                    opacity:1;
+                    margin-top:0px;
+                }
+            }
+
+            @-webkit-keyframes fadeIn {
+                0%{
+                    opacity:0;
+                    margin-top:20px;
+                }
+
+                90%{
+                    opacity:1;
+
+                }
+
+                100%{
+                    opacity:1;
+                    margin-top:0px;
+                }
+            }
+
+            .collumn {
+                width:50%; opacity:0; margin-top:20px;
+
+                @include mobile-only{
+                    width:100%;
+                }
+                
+                h3 {
+                    text-transform: uppercase;
+                    font-weight:100;
+                    position:relative;
+                    display:inline-block;  
+
+                    &::after{
+                        content:"";
+                        position:absolute;
+                        top:100%;
+                        width:45px;
+                        left:0;
+                        margin-top:5px;
+                        border-bottom: 2px solid #99e2d0
+                    }
+                }
+
+                ul {
+                    margin:0;
+                    li {
+                        @extend .shadow-light;
+                        margin-bottom: 20px;
+                        background-color:white;
+                        @include radiusAll;
+                        display:flex;
+                        justify-content: flex-end;
+                        align-items:flex-end;
+                        height:73px;
+                        overflow:hidden;
+                        cursor:pointer;
+
+                        p {
+                            margin:0;
+                            height:100%;
+                            padding:15px 0px 15px 15px;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            width:100%;
+
+                            strong {
+                                font-size:110%;
+                                display:block;
+                                margin-bottom:5px;
+                            }
+                        }
+
+                        .price {
+                            font-weight:bold;
+                            display:inline-block;
+                            padding:0px 15px 15px 0px;
+                        }
+
+                        .tick {
+                            position:relative;
+                            height:100%;
+                            background-color:$green;
+                            width:60px;
+                            margin-right:-60px;
+
+
+                            &::after {
+                                content:'';
+                                height:100%;
+                                width:100%;
+                                background:url(../images/tick.png) no-repeat 50% 50%;
+                                position:absolute;
+                                top:0;
+                                left:0;
+                            }
+                        }
+
+                        @keyframes tick {
+                            from {
+                                margin-right:-60px;
+                            }
+    
+                            to {
+                                margin-right:0px;
+                            }
+                        }
+    
+                        @-webkit-keyframes tick {
+                            from {
+                                margin-right:-60px;
+                            }
+    
+                            to {
+                                margin-right:0px;
+                            }
+                        }
+    
+                        @keyframes tickAft {
+                            from {
+                                transform: rotate(0deg);
+                            }
+    
+                            to {
+                                transform: rotate(360deg);
+                            }
+                        }
+    
+                        @-webkit-keyframes tickAft {
+                            from {
+                                transform: rotate(0deg);
+                            }
+    
+                            to {
+                                transform: rotate(360deg);
+                            }
+                        }
+
+                        &:hover > .tick {
+                            animation:0.5s tick forwards;
+
+                            &::after {
+                                animation:0.6s tickAft forwards;
+                            }
+                        }
+                    }
+                }
+
+                &:nth-child(1) {
+                    animation:0.9s fadeIn forwards;
+                    animation-delay: 0.2s;
+                    padding-right:20px;
+
+                    @include mobile-only{
+                        padding-right:0;
+                    }
+                }
+    
+                &:nth-child(2) {
+                    animation:0.9s fadeIn forwards;
+                    animation-delay: 0.5s;
+                }
+    
+                &:nth-child(3) {
+                    animation:0.9s fadeIn forwards;
+                    animation-delay: 0.7s;
+                    width:100%;
+                }
+            } // .collumn
+        } // .wrap
+
+        h1 {
+            font-family:Shrikhand;
+            margin-right:30px;
+        }
+
+        .heart {
+            margin-top:0
+        }
+    }
+}

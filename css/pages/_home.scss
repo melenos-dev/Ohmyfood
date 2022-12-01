@@ -1,0 +1,66 @@
+.container {
+    .content {
+        &.functioning h1 {
+            text-align:center;
+            margin-bottom:20px;
+        }
+    
+        &.functioning ul {
+            width:50%;
+            margin:auto;
+            @include mobile-only{
+                width:100%;
+                padding:0px 30px;
+            }
+    
+            li{
+                @extend .rounded;
+                @extend .shadow-light;
+                margin-bottom:20px;
+                padding:30px 15px 20px 35px;
+                background-color:$bg-light;
+                font-weight:bold;
+                cursor:pointer;
+                position:relative;
+        
+                span {
+                    @extend .rounded;
+                    position:absolute;
+                    display:block;
+                    background-color:$purple;
+                    color:white;
+                    top: 24px;
+                    //transform: translateY(-50%); // to center vertically correctly, translate -50% of his height and change top position to 50%.
+                    left:-8px;
+                    padding:4px 8px;
+                    font-weight:100;
+                }
+
+                &:hover {
+                    background-color:#f7f1ff!important;
+                }
+            
+                &:hover > i{
+                    color:$purple;
+                }
+            }
+    
+            i {
+                margin-right:11px;
+                width:18px;
+                text-align:center;
+                color:#7e7e7e;
+            }
+        }
+    } // .content
+
+    &.restaurants {
+        background-color: $bg-light;
+        width:100%;
+        padding:30px 15px;
+    
+        h1 {
+            margin-bottom:15px;
+        }
+    }
+} // .container

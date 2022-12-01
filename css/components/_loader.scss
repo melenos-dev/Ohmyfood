@@ -1,0 +1,113 @@
+@keyframes loader {
+	0%{
+		opacity:0;
+	}
+    20%{
+        color:#FFFFFF;
+    }
+	30%{
+		opacity:0.9;
+	}
+    40%{
+        color:#000000;
+    }
+    60%{
+        color:#FFFFFF;
+        opacity:0.9;
+    }
+    99%{
+        opacity:0;
+        z-index:5;
+    }
+    100%{
+        opacity:0;
+        z-index:-1;
+    }
+}
+
+@-webkit-keyframes loader {
+	0%{
+		opacity:0;
+	}
+    20%{
+        color:#FFFFFF;
+    }
+	30%{
+		opacity:0.9;
+	}
+    40%{
+        color:#000000;
+    }
+    60%{
+        color:#FFFFFF;
+        opacity:0.9;
+    }
+    99%{
+        opacity:0;
+        z-index:5;
+    }
+    100%{
+        opacity:0;
+        z-index:-1;
+    }
+}
+
+@keyframes loading {
+    0% {
+        opacity:0;
+    }
+    20%{
+        opacity:1;
+        background-position:227px 80px;
+    }
+    40% {
+        opacity:1;
+        background-position:135px 80px;
+    }
+    60% {
+        background-position:0px 80px;
+    }
+}
+
+@-webkit-keyframes loading {
+    0% {
+        opacity:0;
+    }
+    20%{
+        opacity:1;
+        background-position:227px 80px;
+    }
+    40% {
+        opacity:1;
+        background-position:135px 80px;
+    }
+    60% {
+        background-position:0px 80px;
+    }
+}
+
+#loader {
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    color:#FFFFFF;
+    opacity:0;
+    background-color:$purple;
+    animation:4s loader forwards;
+    z-index:5;
+
+    .loading {
+        margin:0 auto;
+        width:300px;
+        text-align:center;
+        height:200px;
+        margin-top:100px;
+        padding-top:30px;
+        font-weight:bold;
+        background:url(../images/logo/ohmyfood.png) no-repeat 227px 80px;
+        background-size: contain;
+        animation:4s loading forwards;
+    }
+}

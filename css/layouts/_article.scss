@@ -1,0 +1,91 @@
+article {
+    @include radiusAll;
+    box-shadow: -1px 2px 18px -1px rgba(0,0,0,0.31);
+    -moz-box-shadow: -1px 2px 18px -1px rgba(0,0,0,0.31);
+    margin:0px 30px 15px 0px;
+    background-color:white;
+    width:calc(25% - 22.5px); // 90px of margin right ( 30px * 3 articles concerned) / 4 = 22.5.
+
+    @include tablet-only{
+        margin-right:15px;
+        width:calc(50% - 7.5px); // Same logic
+
+        &:nth-child(2) {
+            margin-right:0;
+        }
+    }
+
+    @include mobile-only{
+        margin-right:0;
+        width:100%;
+    }
+
+    a:hover > .body > .left > h3 {
+        text-decoration:underline;
+    }
+
+    a:hover > .img > img {
+        width:400px;
+        @include tablet-only{
+            width:700px;
+        }
+
+        @include mobile-only{
+            width:950px;
+        }
+    }
+
+    .img {
+        overflow:hidden;
+        position:relative;
+        height:175px;
+        @include radiusTop;
+        
+        img {
+            width:500px;
+            @include tablet-only{
+                width:800px;
+            }
+
+            @include mobile-only{
+                width:850px;
+            }
+
+            position:absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            object-fit: contain;
+            transition-property: width;
+            transition-duration: .3s; 
+        }
+
+        span {
+            position:absolute;
+            top:10px; right:10px;
+            background-color:#99e2d0;
+            color:#008766;
+            padding:10px;
+            border-radius:5px;
+        }
+    }
+
+    .body {
+        @extend .space-between;
+        padding:0px 15px 15px 15px;
+        @include radiusBottom;
+
+        h3 {
+            margin:15px 0px 5px 0px;
+            font-size:110%;
+        }
+
+        p {
+            margin:0
+        }
+    }
+
+    &:last-child {
+        margin-right:0;
+    }
+} // article

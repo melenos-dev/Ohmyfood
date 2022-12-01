@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+html {
+    body {
+        font-family: "Roboto", sans-serif;
+        font-size: 100%;
+        font-weight: 100;
+        position: relative;
+    }
+}
+
+.container {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+
+    .content {
+        width: 80%;
+        max-width: 1440px;
+
+        @include tablet-only {
+            width: 100%;
+        }
+    }
+}
+
+.flex-auto {
+    flex: 1 1 auto !important;
+}
+
+.wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.collumn-wrap {
+    // not used right now, but if needed...
+    display: flex;
+    flex-flow: column wrap;
+    align-content: space-between;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 150%;
+    margin: 0px 0px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+a,
+strong,
+b {
+    font-weight: 700;
+}
+
+p {
+    margin: 10px 0px;
+    font-weight: 100;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}

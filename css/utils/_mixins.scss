@@ -1,0 +1,26 @@
+@mixin radiusTop {
+    border-radius: 15px 15px 0px 0px;
+    -moz-border-radius: 15px 15px 0px 0px;
+}
+
+@mixin radiusBottom {
+    border-radius: 0px 0px 15px 15px;
+    -moz-border-radius: 0px 0px 15px 15px;
+}
+
+@mixin radiusAll {
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+}
+
+@mixin tablet-only {
+    @media screen and (max-width: map-get($breakpoints, tablet)) {
+        @content;
+    }
+}
+
+@mixin mobile-only {
+    @media screen and (max-width: map-get($breakpoints, mobile)) {
+        @content;
+    }
+}
